@@ -1,43 +1,24 @@
-const ar = 'here we are';
-
-eachWord = ''
 
 
-  for (let i = 0; i < ar.length; i++){
-    if (ar[i] !== ' '){
-      eachWord += ar[i]
-  }else if(ar[i] === ' '){
-    ar[i].toUpperCase()
-  }
-  
-}
-
-console.log(eachWord)
+const names = ['mike', 'joe', 'sam']
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// d = '';
-
-// for (i = 0; i < ar.length; i++){
-// if (ar[i] !== ' '){
-//   d += ar[i]
-// }else{
-//   d += ' hgdtdxmytkrsm '
-// }
+// i refferese to the individual index of the array or string
+// for( let i in names){
+//   console.log( i )
 // }
 
-// console.log(d)
+// for( let i in names){
+//   const name = names[i]
+
+//   console.log( i , name )
+// }
+
+// name reffese to the individual item in the array or string
+// for( let name of names ){
+//   console.log(  name )
+// }
+
