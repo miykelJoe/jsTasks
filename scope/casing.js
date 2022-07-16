@@ -1,5 +1,5 @@
 // CAMEL CASING
-const sentence = 'Java Script'
+const sentence = 'mAn ChEster UniTed'
 
 function camelCasing( sentense ){
   let newSentence = ''
@@ -11,7 +11,7 @@ function camelCasing( sentense ){
     }else if(sentense[i - 1] === ' '){
       newSentence += sentense[i].toUpperCase()
     }else if (sentense[i] !== ' '){
-      newSentence += sentense[i]
+      newSentence += sentense[i].toLowerCase()
     }else if(sentense[i] === ' '){
       newSentence += ''
     }
@@ -22,7 +22,7 @@ function camelCasing( sentense ){
 
 //SENTENCE CASING
 
-let sentenc = 'how are you';
+let sentenc = 'hoW are you';
 
 function sentenseCase( sentence ){
   let newSentence = new String()
@@ -35,7 +35,7 @@ function sentenseCase( sentence ){
       newSentence += letter.toUpperCase()
       continue;
     }
-    newSentence += letter
+    newSentence += letter.toLowerCase()
   }
   console.log( newSentence )
   return newSentence
@@ -43,6 +43,10 @@ function sentenseCase( sentence ){
 sentenseCase(sentenc)
 
 const secondSentence = "hello how are you!"
+
+
+
+
 
 function sentenceCase(value){
   let newSentence = ''
