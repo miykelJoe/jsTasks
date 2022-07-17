@@ -3,6 +3,7 @@ const sentence = 'mAn ChEster UniTed'
 
 function camelCasing( sentense ){
   let newSentence = ''
+  let newSentencetag = []
 
   for(let i = 0; i < sentense.length; i++){
       
@@ -14,8 +15,14 @@ function camelCasing( sentense ){
       newSentence += sentense[i].toLowerCase()
     }else if(sentense[i] === ' '){
       newSentence += ''
-    }
-}return newSentence
+    }  
+}
+  if (newSentence){     
+    newSentencetag.unshift(['#'] + newSentence)
+}
+
+let harshTagged = String(newSentencetag)
+return harshTagged
 }
  console.log(camelCasing(sentence))
 // -----------------------------------------------
