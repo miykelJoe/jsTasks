@@ -20,8 +20,8 @@ function camelCasing( sentense ){
   if (newSentence){     
     newSentencetag.unshift(['#'] + newSentence)
 }
-
 let harshTagged = String(newSentencetag)
+
 return harshTagged
 }
  console.log(camelCasing(sentence))
