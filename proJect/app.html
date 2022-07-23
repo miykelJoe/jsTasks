@@ -2,15 +2,24 @@
 <html lang="en">
     <head>
         <title>Todo App Logic</title>
+
+        <style>
+            .error_output{
+                display:none;
+                color:red;
+                padding:1em;
+            }
+        </style>
     </head>
 
     <body>
         
-        <div class="create-todo-container">
-            <div class="nav__section">
-                <div>
+        <div  class="create-todo-container">
+            <div class="nav__section" style=" background-color: aquamarine;">
+                <div style="background-color: rgb(190, 190, 190);">
                     <input  type="text" placeholder="Type your Todo">
                     <button>ADD</button>
+                    <div class="error_output"></div>
                 </div>
                 <hr>
 
@@ -24,7 +33,7 @@
         </div>
 
         <script>
-            const todos = []
+            let todos = []
             const todoInput = document.querySelector('input');
             const submitBtn = document.querySelector('button');
 
@@ -32,12 +41,16 @@
                 const todoInnerContainer = document.querySelector('div.todo__inner-container')
 
                 const todoChildrenElement = todoInnerContainer.querySelectorAll('*') // select all element in the todoInnerContainer element
+                
+                // UPDATE
                 for ( let child of todoChildrenElement) child.remove() // remove individual child of the todoInnerContainer element
 
                 for ( let todo of todos ){
+                    // CREATE
                     const todoContainer = document.createElement('div')
                     todoContainer.className = 'todo' // adding class to div.todo
                     const checkbox = document.createElement('input') // creating input:checkbox
+                    checkbox.checked = !todo.checked
                     checkbox.type = 'checkbox' // setting type attribute of checkbox | alternative = checkbox.setAttribute('type', 'checkbox')
                     const todoOutput = document.createElement('p')
                     todoOutput.innerText = todo.todo
@@ -45,24 +58,49 @@
                     deleteBtn.className = 'delete'
                     deleteBtn.innerText = 'X'
 
+                    deleteBtn.onclick = function( event ){
+                        // Delete object from array by it's id 
+                            const newArray = []
+                            for( let activity of todos ){
+                                if( activity.id !== todo.id  ){
+                                    newArray.push( activity )
+                                }
+                            }
+                            todos = newArray
+                        // Update the dom
+                        generateTodoUI()
+                    }
 
+                    // UPDATE
                     todoContainer.appendChild(checkbox)
                     todoContainer.appendChild(todoOutput)
                     todoContainer.appendChild(deleteBtn)
 
-
+                    // UPDATE
                     todoInnerContainer.appendChild( todoContainer )
                 }
+            }
+            const errorEnv = document.querySelector('.error_output')
+
+            todoInput.oninput = function( event ) {
+                if( event.target.value.trim() !== '' ) errorEnv.style.display = 'none' 
             }
 
             submitBtn.onclick = function(){
                 const todoValue = todoInput.value
-                if( todoValue.trim() === '' ) throw new Error('input is empty!')
+
+                if( todoValue.trim() === '' ){
+                    console.log(errorEnv)
+                    errorEnv.style.display = 'block';
+                    errorEnv.innerText = 'input is empty'
+                    return 
+                }
+                errorEnv.style.display = 'none'
 
                 todos.push(
                     {
                         todo: todoValue,
-                        completed: false,
+                        completed: true,
                         created: Date.now(),
                         id: String(Date.now()) + '-' + String(Math.random()) + '-' + String(todos.length)
                     }
