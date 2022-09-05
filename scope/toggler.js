@@ -8,8 +8,6 @@ function togglerfunc(){
   toggler = false
   }
   console.log(toggler)
-  
-  
 }
 
 togglerfunc()

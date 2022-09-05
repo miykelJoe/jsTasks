@@ -1,5 +1,5 @@
 // CAMEL CASING
-const sentence = 'mAn ChEster UniTed'
+const sentence = 'man ChES Ter uNITEd'
 
 function camelCasing( sentense ){
   let newSentence = ''
@@ -14,7 +14,7 @@ function camelCasing( sentense ){
     }else if (sentense[i] !== ' '){
       newSentence += sentense[i].toLowerCase()
     }else if(sentense[i] === ' '){
-      newSentence += ''
+      newSentence += '_'
     }  
 }
   if (newSentence){     
@@ -26,6 +26,8 @@ return harshTagged
 }
  console.log(camelCasing(sentence))
 // -----------------------------------------------
+
+
 
 //SENTENCE CASING
 

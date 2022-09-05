@@ -2,7 +2,6 @@ let figure = 0;
 
 function counter( anyNumber ){
  
- 
  if(anyNumber === 'increment'){
   figure++
   }else if(anyNumber === 'decrement'){
