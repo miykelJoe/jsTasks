@@ -25,3 +25,14 @@ let gradeCalc = function(studentScore, totalPossibleScore = 100){
 let score = gradeCalc(68, 10)
 
 console.log(score)
+
+let percentCalc = function(percent, total = 2000){
+
+    let per = percent / 100
+    let result = per * total
+    return result
+}
+
+let realScore = percentCalc(80, 20)
+
+console.log(realScore)
