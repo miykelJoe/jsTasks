@@ -21,11 +21,11 @@ let getSummary = function(book){
 let bookSummary = getSummary(myBook)
 let otherBookSummary = getSummary(otherBook)
 
-console.log(otherBookSummary.pageCountSummary)
+console.log(otherBookSummary.summary)
 
 //Challenge
 
-let temperature = 80
+let temperature = 74
 let allTemp = function (temp){
     return {
         fahrenhiet: `${temp}`,
