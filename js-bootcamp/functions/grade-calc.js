@@ -1,8 +1,7 @@
 
-let gradeCalc = function(studentScore, totalPossibleScore = 100){
+const gradeCalc = function(studentScore, totalPossibleScore = 100){
 
-    let scorePercent = (studentScore / totalPossibleScore) * 100
-
+    const scorePercent = (studentScore / totalPossibleScore) * 100
     let grade = ''
     if (scorePercent <= 59){
         grade = 'F'
@@ -16,13 +15,13 @@ let gradeCalc = function(studentScore, totalPossibleScore = 100){
         grade = 'A'
     } else {
         grade = 'Invalid'
-        scorePercent = ''
+        // scorePercent = ''
     }
 
     return  `You got a ${grade} (${scorePercent}%)!`
 }
 
-let score = gradeCalc(68, 10)
+const score = gradeCalc(8, 10)
 
 console.log(score)
 

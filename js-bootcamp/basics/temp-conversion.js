@@ -4,4 +4,3 @@ let kelvin = (fehrenheit + 459.67) * (5/9)
 
 console.log(celsius)
 console.log(kelvin)
-  

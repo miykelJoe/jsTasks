@@ -11,6 +11,13 @@ let restaurant = {
     },
     removeParty: function(leavingGuest){
         this.guestCount = this.guestCount - leavingGuest
+    },
+    resetParty: function(reset){
+        if (reset === 0){
+            this.guestCount = 0
+        }else{
+            return 'Input 0 to reset'
+        }
     }
 }
 
@@ -18,3 +25,5 @@ restaurant.seatParty(72)
 console.log(restaurant.checkAvailability(4))
 restaurant.removeParty(5)
 console.log(restaurant.checkAvailability(4))
+restaurant.resetParty(0)
+console.log(restaurant.checkAvailability(10))

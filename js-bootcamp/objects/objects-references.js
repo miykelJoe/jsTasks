@@ -26,18 +26,13 @@ let getAccountSummary = function (account){
 
 addIncome(myAccount, 500)
 addExpense(myAccount, 359)
-let getAccount = getAccountSummary(myAccount)
+addExpense(myAccount, 50)
+console.log(getAccountSummary(myAccount))
 resetAccount(myAccount)
+console.log(getAccountSummary(myAccount))
 
-console.log(getAccount)
+let text = '  mikel joe';
 
 
 
-
-//resetAccount
-
-// getAccountSummary - account balance
-//Account for Andrew has $900. $1000 in income. $100 in expenses.
-
-// addExpense(myAccount, 50)
-// console.log(myAccount)
+console.log(splice(text, 1))
